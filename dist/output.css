@@ -345,7 +345,7 @@ body {
   color: var(--color-white);
 }
 .background {
-  background-image: url("assets/bg.jpg");
+  background-image: url("../assets/bg.jpg");
   z-index: -1;
   position: absolute;
   top: calc(var(--spacing) * 0);
