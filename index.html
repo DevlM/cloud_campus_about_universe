@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpaceX</title>
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-black min-h-screen *:text-white p-4">
+    <div class="background"></div>
+    <nav class="navbar">
+      <div class="container mx-auto flex justify-between">
+        <div class="flex items-center">
+          <a href="#" class="text-lg font-bold">SpaceX</a>
+        </div>
+        <div class="flex items-center gap-5">
+          <a href="/" class="unactive">Accueil</a>
+          <a href="/">Prochaines mission</a>
+        </div>
+      </div>
+    </nav>
+    <div class="layout">
+      <div class="sidebar">
+        <a href="/pages/planete.html" class="sidebar-item unactive">
+          <i data-lucide="globe"></i>
+          <span>Planètes</span>
+        </a>
+        <a href="/pages/vehicule.html" class="sidebar-item unactive">
+          <i data-lucide="car"></i>
+          <span>Véhicules</span>
+        </a>
+        <a href="/pages/personne.html" class="sidebar-item unactive">
+          <i data-lucide="users"></i>
+          <span>Personnes</span>
+        </a>
+      </div>
+      <main class="p-5 flex flex-col justify-center items-center gap-5">
+        <div class="p-4 flex flex-col gap-5">
+          <h1 class="text-5xl font-semibold text-center animate-pulse">
+            Bienvenue sur SpaceX
+          </h1>
+          <p class="text-center">
+            Sur cette page vous pouvez trouver des informations sur les
+            planètes, les véhicules et les personnes.
+          </p>
+          <a href="/pages/planete.html" class="btn self-center"
+            >Commencer votre voyage</a
+          >
+        </div>
+        <div>
+          <div class="flex gap-5">
+            <div class="state-card">
+              <i data-lucide="users"></i>
+              <h2>Êtres Vivants</h2>
+              <p id="people-results-count">0</p>
+            </div>
+            <div class="state-card">
+              <i data-lucide="rocket"></i>
+              <h2>Véhicules recensés</h2>
+              <p id="vehicul-results-count">0</p>
+            </div>
+            <div class="state-card">
+              <i data-lucide="globe"></i>
+              <h2>Planètes recensées</h2>
+              <p id="planets-results-count">0</p>
+            </div>
+            <div class="state-card">
+              <i data-lucide="clock"></i>
+              <h2>Prochaine mission</h2>
+              <p id="next-mission-results">0</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer></footer>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="/api.js"></script>
+  </body>
+</html>

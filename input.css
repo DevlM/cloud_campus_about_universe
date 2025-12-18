@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @apply h-screen text-white;
+}
+
+.background {
+  background-image: url("/assets/bg.jpg");
+  z-index: -1;
+  @apply h-screen bg-cover bg-center bg-no-repeat absolute top-0 left-0 right-0 bottom-0;
+}
+
+.background::before {
+  content: "";
+  z-index: 0;
+  @apply h-screen bg-black/50 absolute top-0 left-0 right-0 bottom-0;
+}
+
+.navbar {
+  @apply sticky top-0 p-4 rounded-lg mb-4 bg-black/80;
+}
+
+.navbar a {
+  @apply text-lg font-bold uppercase hover:text-blue-800 transition-colors;
+}
+.navbar a.active {
+  @apply text-blue-700;
+}
+
+.layout {
+  height: calc(100vh - 62px - 32px - 16px);
+  @apply grid grid-cols-[min-content_1fr];
+}
+
+.sidebar {
+  @apply flex flex-col gap-3 h-full sticky top-14 p-3 bg-black/80 rounded-lg;
+}
+
+.sidebar-item {
+  @apply flex items-center justify-center h-16 hover:bg-blue-800 transition-colors gap-5 rounded-xl p-4;
+}
+
+.sidebar-item.active {
+  @apply bg-blue-700;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg bg-blue-800 hover:bg-blue-900 transition-colors;
+}
+
+.state-card {
+  @apply p-4 rounded-lg bg-black/80 flex flex-col items-center justify-between gap-2 text-center flex-1;
+}
+
+.state-card svg {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.table tr {
+  @apply h-10 my-2 hover:bg-red-800 cursor-pointer;
+}
+
+.table td {
+  @apply p-2 my-2 bg-black/80;
+}

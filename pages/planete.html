@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpaceX</title>
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-black min-h-screen *:text-white p-4">
+    <div class="background"></div>
+    <nav class="navbar">
+      <div class="container mx-auto flex justify-between">
+        <div class="flex items-center">
+          <a href="/" class="text-lg font-bold">SpaceX</a>
+        </div>
+        <div class="flex items-center gap-5">
+          <a href="/" class="unactive">Accueil</a>
+          <a href="/">Prochaines mission</a>
+        </div>
+      </div>
+    </nav>
+    <div class="layout">
+      <div class="sidebar rounded-r-none">
+        <a href="/pages/planete.html" class="sidebar-item active">
+          <i data-lucide="globe"></i>
+          <span>Planètes</span>
+        </a>
+        <a href="/pages/vehicule.html" class="sidebar-item">
+          <i data-lucide="car"></i>
+          <span>Véhicules</span>
+        </a>
+        <a href="/pages/personne.html" class="sidebar-item">
+          <i data-lucide="users"></i>
+          <span>Personnes</span>
+        </a>
+      </div>
+      <main class="flex gap-5">
+        <div class="p-4 min-w-100 bg-black/80 flex flex-col gap-4 rounded-r-lg">
+          <h1 class="text-2xl font-bold uppercase">Planètes</h1>
+          <div class="flex gap-2">
+            <select
+              id="sort-select"
+              class="rounded-md border border-white/20 p-2 bg-black flex-1"
+            >
+              <option value="">Trier les planètes</option>
+              <option value="name">Ordre alphabétique</option>
+              <option value="population">Par population</option>
+              <option value="diametre">Par diamètre</option>
+              <option value="created">Par date de création</option>
+            </select>
+            <select
+              id="sort-direction-select"
+              class="rounded-md border border-white/20 p-2 bg-black"
+            >
+              <option value="asc">Croissant</option>
+              <option value="desc">Decroissant</option>
+            </select>
+          </div>
+          <input
+            id="search"
+            class="rounded-md border border-white/20 p-2 bg-black"
+            type="text"
+            placeholder="Rechercher"
+          />
+          <table class="table">
+            <thead>
+              <tr class="bg-blue-700 *:px-5">
+                <th>Nom</th>
+                <th class="text-right">Population</th>
+                <th class="text-right">Diamètre</th>
+                <th class="text-right">Date de formation</th>
+              </tr>
+            </thead>
+            <tbody id="planets" class="*:tr>*:h-10"></tbody>
+          </table>
+          <span>Resultats: <span id="planets-results-count" /></span>
+        </div>
+        <div class="flex-1 flex items-center justify-center">
+          <div class="bg-black/80 p-4 rounded-lg">
+            <div id="selected-planet" class="text-center">
+              <p>Selectionner le contenu à afficher !</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer></footer>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="/api.js"></script>
+  </body>
+</html>
