@@ -9,7 +9,7 @@ body {
 }
 
 .background {
-  background-image: url("/assets/bg.jpg");
+  background-image: url("assets/bg.jpg");
   z-index: -1;
   @apply h-screen bg-cover bg-center bg-no-repeat absolute top-0 left-0 right-0 bottom-0;
 }
